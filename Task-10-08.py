@@ -1,19 +1,31 @@
 #1.Text Case Converter
 '''
 text=input("Enter a sentence: ")
-print("Upper:", text.upper())
-print("Lower:", text.lower())
-print("Title:", text.title())
-print("Capitalized:", text.capitalize())
-print("Swap case:", text.swapcase())
+methods=["Upper", "Lower", "Title", "Capitalized", "Swap case"]
+for method in methods:
+    if method=="Upper":
+        print("Upper :", text.upper())
+    elif method=="Lower":
+        print("Lower :", text.lower())
+    elif method=="Title":
+        print("Title :", text.title())
+    elif method=="Capitalized":
+        print("Capitalized :", text.capitalize())
+    elif method=="Swap case":
+        print("Swap case :", text.swapcase())
 if text.isupper():
-    print("Text is uppercase")
-elif text.islower():
-    print("Text is lowercase")
-elif text.istitle():
-    print("Text is title case")
+    print("Original text is uppercase")
 else:
-    print("Text has mixed case")
+    print("Original text is not uppercase")
+if text.islower():
+    print("Original text is lowercase")
+else:
+    print("Original text is not lowercase")
+
+if text.istitle():
+    print("Original text is title case")
+else:
+    print("Original text is not title case")
 
 OUTPUT--->
 Enter a sentence: WELCOME TO PYTHON
@@ -83,10 +95,15 @@ Enter username: quit
 
 #3.Student Report
 '''
+print("=" * 30)
 print("STUDENT REPORT".center(30))
+print("=" * 30)
 for i in range(3):
-    name=input("Name: ")
-    marks=int(input("Marks: "))
+    name=input("Enter student name: ")
+    marks=int(input("Enter marks: "))
+    if marks<0 or marks>100:
+        print("Invalid marks")
+        continue
     if marks>=80:
         grade="A"
     elif marks>=60:
@@ -96,22 +113,24 @@ for i in range(3):
     else:
         grade="Fail"
     print(f"{name.ljust(10)} {str(marks).rjust(5)} {grade.rjust(5)}")
-    
+ 
 OUTPUT--->
-       STUDENT REPORT        
-Name: Asha
-Marks: 85
+==============================
+        STUDENT REPORT        
+==============================
+Enter student name: Asha
+Enter marks: 85
 Asha          85     A
-Name: Rahul
-Marks: 63
+Enter student name: Rahul
+Enter marks: 63
 Rahul         63     B
-Name: John
-Marks: 35
+Enter student name: John
+Enter marks: 35
 John          35  Fail
 '''
 
 #4.Character and Text Analyzer
-
+'''
 text = input("Enter text: ")
 letters=0
 digits=0
@@ -133,7 +152,7 @@ print("Printable:", printable)
 print("Lowercase:", text.islower())
 print("Uppercase:", text.isupper())
 print("Title case:", text.istitle())
-'''
+
 OUTPUT--->
 Enter text: Python Class 101
 Letters: 11
