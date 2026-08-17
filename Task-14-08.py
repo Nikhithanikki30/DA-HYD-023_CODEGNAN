@@ -30,30 +30,50 @@ Length: 4
 
 #2.Number list analyser
 '''
-number=[20,10,30,20,40,20]
-number.sort()
-print('Sorted list:',number)
-number.reverse()
-print('Reversed list:',number)
-num=int(input('Enter the number to search:'))
-if num in number:
-    print('Count:',number.count(num))
-    print('First Index:',number.index(num))
+numbers=[20,10,30,20,40,20]
+numbers.sort()
+print("Sorted list:", numbers)
+print("Ascending values:")
+for i in numbers:
+    print(i)
+numbers.reverse()
+print("Reversed list:", numbers)
+print("Descending values:")
+for i in numbers:
+    print(i)
+num=int(input("Enter the number to search: "))
+if num in numbers:
+    print("Count:", numbers.count(num))
+    print("First Index:", numbers.index(num))
 else:
-    print('Number not found')
-print('Smallest number',min(number))
-print('Largest number',max(number))
-print('Sum =',sum(number))
+    print("Number not found")
+print("Smallest number:", min(numbers))
+print("Largest number:", max(numbers))
+print("Sum:", sum(numbers))
 
 Output:
 Sorted list: [10, 20, 20, 20, 30, 40]
+Ascending values:
+10
+20
+20
+20
+30
+40
 Reversed list: [40, 30, 20, 20, 20, 10]
-Enter the number to search:20
+Descending values:
+40
+30
+20
+20
+20
+10
+Enter the number to search: 20
 Count: 3
 First Index: 2
-Smallest number 10
-Largest number 40
-Sum = 140
+Smallest number: 10
+Largest number: 40
+Sum: 140
 '''
 
 #3.Even and odd number seperator
@@ -135,34 +155,49 @@ for k in c:
 print('Only one course:')
 for m in d:
     print(m)
-print("DA is subset of Python:", da_students.issubset(python_students))
+    
+print("\nDA is subset of Python:", da_students.issubset(python_students))
+if da_students.issubset(python_students):
+    print("All DA students are also Python students")
+else:
+    print("All DA students are not Python students")
+
 print("Python is superset of DA:", python_students.issuperset(da_students))
+if python_students.issuperset(da_students):
+    print("Python contains all DA students")
+else:
+    print("Python does not contain all DA students")
+
 print("Both sets are disjoint:", python_students.isdisjoint(da_students))
+if python_students.isdisjoint(da_students):
+    print("There are no common students")
+else:
+    print("There are common students in both courses")
 
 Output:
 All Students:
 John
-Asha
-Meera
-Rahul
 Arun
-
+Rahul
+Meera
+Asha
 Students have both courses:
 Rahul
 Meera
-
 Only Python:
 John
 Asha
-
 Only one course:
 John
-Asha
 Arun
+Asha
 
 DA is subset of Python: False
+All DA students are not Python students
 Python is superset of DA: False
+Python does not contain all DA students
 Both sets are disjoint: False
+There are common students in both courses
 '''
                  
 
